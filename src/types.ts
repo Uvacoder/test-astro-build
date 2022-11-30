@@ -1,4 +1,5 @@
 import { ImageMetadata } from '@astrojs/image'
+import { CollectionEntry } from 'astro:content'
 
 /** Base Data Types */
 export interface Image {
@@ -30,15 +31,7 @@ export interface Site {
     socialLinks: IconLink[]
 }
 
-export interface BlogPost {
-    url: string
-    title: string
-    description: string
-    publishDate: Date
-    authors: Person[]
-    socialImage?: string;
-    coverImage?: string;
-}
+export type BlogPost = CollectionEntry<'blog'>;
 
 export interface Theme {
     slug: string
